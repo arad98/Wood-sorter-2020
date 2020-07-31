@@ -8,19 +8,30 @@ public class Wood implements Comparable{
     private double width;
     private double height;
     private int weight;
+    private int amount;
 
     public Wood() {
         setLength(0);
         setHeight(0);
         setWidth(0);
         setWeight(0);
+        setAmount(0);
     }
 
-    public Wood(double l,double w,double h,int weight) {
+    public Wood(double l,double w,double h,int weight,int amount) {
         setLength(l);
         setHeight(w);
         setWidth(h);
         setWeight(weight);
+        setAmount(amount);
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public int getAmount() {
+        return amount;
     }
 
     public void setWeight(int weight) {
@@ -56,7 +67,7 @@ public class Wood implements Comparable{
     }
 
     public String toString() {
-        return getHeight() + " in," + getWidth() + " in," + getLength() + " ft," + getWeight() + " lb's ";
+        return getAmount() + " volume, "  + getHeight() + " in," + getWidth() + " in," + getLength() + " ft," + getWeight() + " lb's ";
     }
 
     @Override

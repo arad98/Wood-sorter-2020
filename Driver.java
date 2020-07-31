@@ -7,13 +7,13 @@ public class Driver {
     private ArrayList<Wood> woodList;
 
     public Driver() {
-        fillList(100);
+        fillList(10);
     }
 
     public void fillList(int listLength) {
         ArrayList<Wood> wood = new ArrayList<>();
         for( int length = 0; length < listLength; length++) {
-            wood.add(new Wood(returnRandom(1,6),returnRandom(1,6),returnRandom(2,16), (int) returnRandom(3,26)));
+            wood.add(new Wood(returnRandom(1,6),returnRandom(1,6),returnRandom(2,16), (int) returnRandom(3,26),(int)returnRandom(1,100)));
         }
         Collections.sort(wood);
         woodList = wood;
