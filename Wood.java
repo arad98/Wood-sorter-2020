@@ -2,6 +2,7 @@
  * class holds data for a wood object to be sorted
  * all length measures will be imperial units
  * all weights will be in imperial units
+ *
  */
 public class Wood implements Comparable{
     private double length;
@@ -66,14 +67,25 @@ public class Wood implements Comparable{
         return width;
     }
 
-    public String toString() {
-        return getAmount() + " volume, "  + getHeight() + " in," + getWidth() + " in," + getLength() + " ft," + getWeight() + " lb's ";
+    public int getVolume() {
+        return (int)(getLength() * getWidth() * getHeight());
+
     }
 
+    public String toString() {
+        return getAmount() + " Pieces, "  + getHeight() + " in," + getWidth() + " in," + getLength() + " ft," + getWeight() + " lb's ";
+    }
+
+
+    /**
+     * overides compareTo to isntead compare Volume of wood obj, this lets the driver sort based on the largest volume wood first
+     * @param o other wood obj
+     * @return standard compareTo return
+     */
     @Override
     public int compareTo(Object o) {
-        int compareWeight = ((Wood)o).getWeight();
-        return this.getWeight()-compareWeight;
+        int compareVolume = ((Wood)o).getVolume();
+        return this.getVolume()-compareVolume;
     }
 
 

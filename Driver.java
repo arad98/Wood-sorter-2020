@@ -8,6 +8,7 @@ public class Driver {
 
     public Driver() {
         fillList(10);
+        printList();
     }
 
     public void fillList(int listLength) {
@@ -31,6 +32,13 @@ public class Driver {
 
     public void setWoodList(ArrayList<Wood> woodList) {
         this.woodList = woodList;
+    }
+
+    public void printList() {
+        for(Wood ind:woodList) {
+                System.out.println(ind + " ");
+        }
+
     }
 
     public static void main(String[] args) {
